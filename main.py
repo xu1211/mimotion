@@ -578,13 +578,15 @@ if __name__ == "__main__":
     step_list = step.split('#')
 
     if len(user_list) != len(passwd_list):
-        print('用户名和密码数量不对')
+        print('用户名和密码数量不一致')
         exit(0)
 
     to_push.push_msg = ''
     for user, passwd, step_list in zip(user_list, passwd_list, step_list):
-        setp_array = step.split('-')
-
+        print(f"step_list: {step_list}")
+        setp_array = step_list.split('-')
+        print(f"setp_array: {setp_array}")
+        
         if len(setp_array) == 2:
             step = str(random.randint(int(setp_array[0]), int(setp_array[1])))
             print(f"将设置为随机步数（{setp_array[0]}-{setp_array[1]}）")
