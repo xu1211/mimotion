@@ -4,7 +4,7 @@
 # -*- coding: utf8 -*-
 # python >=3.8
 
-import datetime
+from datetime import datetime
 import json
 import random
 import re
