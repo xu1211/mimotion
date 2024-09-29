@@ -4,6 +4,7 @@
 # -*- coding: utf8 -*-
 # python >=3.8
 
+import datetime
 import json
 import random
 import re
@@ -307,13 +308,11 @@ def main(_user, _passwd, _step):
 
 def get_time():
     """
-    获取时间戳
+    获取本地时间戳
     """
-    url = 'http://api.m.taobao.com/rest/api3.do?api=mtop.common.getTimestamp'
-    response = requests.get(url, headers=headers).json()
-    t = response['data']['t']
-    return t
-
+    local_time = datetime.now()  # 获取当前本地时间
+    timestamp = int(local_time.timestamp())  # 转换为时间戳
+    return timestamp
 
 def get_app_token(login_token):
     """
