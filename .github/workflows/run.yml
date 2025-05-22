@@ -1,4 +1,4 @@
-name: 刷步数
+name: 刷步数 + 保持活跃
 
 on:
   schedule:
@@ -31,5 +31,5 @@ jobs:
     permissions:
       actions: write
     steps:
-      - uses: actions/checkout@v4
-      - uses: gautamkrishnar/keepalive-workflow@v2
+      - name: 保持活跃
+        run: echo "🔄 工作流保活任务触发于 $(date)"
